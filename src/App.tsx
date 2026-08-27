@@ -90,6 +90,15 @@ function App() {
   const handleCloseVideo = useCallback(() => {
     setVideoModalOpen(false);
     setVideoModalUrl('');
+    // Automatically advance to the next beat
+    setActiveBeatIndex((prevIdx) => {
+      if (prevIdx < barqatBeats.length - 1) {
+        const nextIdx = prevIdx + 1;
+        setCurrentTime(barqatBeats[nextIdx].startTime);
+        return nextIdx;
+      }
+      return prevIdx;
+    });
     setPlaying(true); // Automatically resume main VO timeline
   }, []);
 

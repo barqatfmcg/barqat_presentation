@@ -107,9 +107,13 @@ export const Director: React.FC<DirectorProps> = ({
       onTimeUpdate(globalTime, totalDuration);
 
       if (elapsed >= currentBeat.duration) {
-        // Beat completed -> Advance
+        // Beat completed -> Advance or pause
         stopSimulationTimer();
-        advanceBeat();
+        if (currentBeat.pausesTimeline) {
+          setPlaying(false);
+        } else {
+          advanceBeat();
+        }
       }
     }, intervalMs);
   };
@@ -125,19 +129,9 @@ export const Director: React.FC<DirectorProps> = ({
   const advanceBeat = () => {
     if (activeBeatIndex < beats.length - 1) {
       const nextIdx = activeBeatIndex + 1;
-      const nextBeat = beats[nextIdx];
-
-      if (nextBeat.pausesTimeline) {
-        // Pauses at video triggers
-        setActiveBeatIndex(nextIdx);
-        setPlaying(false);
-        setCurrentTime(nextBeat.startTime);
-        onTimeUpdate(nextBeat.startTime, totalDuration);
-      } else {
-        setActiveBeatIndex(nextIdx);
-        setCurrentTime(nextBeat.startTime);
-        onTimeUpdate(nextBeat.startTime, totalDuration);
-      }
+      setActiveBeatIndex(nextIdx);
+      setCurrentTime(beats[nextIdx].startTime);
+      onTimeUpdate(beats[nextIdx].startTime, totalDuration);
     } else {
       // Completed full presentation
       setPlaying(false);
@@ -169,7 +163,11 @@ export const Director: React.FC<DirectorProps> = ({
 
   const handleAudioEnded = () => {
     if (useSimulation) return;
-    advanceBeat();
+    if (currentBeat.pausesTimeline) {
+      setPlaying(false);
+    } else {
+      advanceBeat();
+    }
   };
 
   const handleAudioError = () => {
