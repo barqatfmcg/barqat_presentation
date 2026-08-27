@@ -44,9 +44,7 @@ export const NavBar: React.FC<NavBarProps> = ({
         </div>
 
         <div className="navbar-center">
-          <span className="beat-status">
-            {isBeatPaused ? "⏸ Video Playing..." : playing ? "⚡ Live Presentation" : "⏸ Idle"}
-          </span>
+          <span className="navbar-center-title">Barqat B2B2C Execution plan</span>
           <span className="beat-title-display">{beatTitle}</span>
         </div>
 
@@ -154,18 +152,17 @@ export const NavBar: React.FC<NavBarProps> = ({
           gap: 2px;
         }
 
-        .beat-status {
-          font-size: 11px;
+        .navbar-center-title {
           font-weight: 700;
-          text-transform: uppercase;
-          letter-spacing: 1px;
-          color: var(--primary-green);
+          font-size: 15px;
+          color: var(--charcoal);
+          letter-spacing: -0.2px;
         }
 
         .beat-title-display {
-          font-size: 14px;
+          font-size: 11px;
           font-weight: 500;
-          color: #4b5563;
+          color: #6b7280;
         }
 
         .navbar-controls {
