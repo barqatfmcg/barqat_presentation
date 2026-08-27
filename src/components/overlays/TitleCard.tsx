@@ -1,4 +1,5 @@
 import React from 'react';
+import barqatLogo from '../../assets/barqat_logo.png';
 
 type TitleCardProps = {
   title: string;
@@ -9,10 +10,16 @@ type TitleCardProps = {
 export const TitleCard: React.FC<TitleCardProps> = ({ title, subtitle, visible = true }) => {
   if (!visible) return null;
 
+  const isBrandTitle = title.toUpperCase() === 'BARQAT';
+
   return (
     <div className="title-card-container">
       <div className="title-card">
-        <h1 className="title-text">{title}</h1>
+        {isBrandTitle ? (
+          <img src={barqatLogo} alt="Barqat Logo" className="title-logo-img" />
+        ) : (
+          <h1 className="title-text">{title}</h1>
+        )}
         {subtitle && <p className="subtitle-text">{subtitle}</p>}
       </div>
 
@@ -57,6 +64,15 @@ export const TitleCard: React.FC<TitleCardProps> = ({ title, subtitle, visible =
           font-size: 18px;
           color: #4b5563;
           font-weight: 400;
+        }
+
+        .title-logo-img {
+          height: 52px;
+          object-fit: contain;
+          margin-bottom: 20px;
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
         }
 
         @keyframes fade-in-up {

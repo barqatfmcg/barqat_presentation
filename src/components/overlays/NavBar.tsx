@@ -1,4 +1,5 @@
 import React from 'react';
+import barqatLogo from '../../assets/barqat_logo.png';
 
 type NavBarProps = {
   playing: boolean;
@@ -38,8 +39,7 @@ export const NavBar: React.FC<NavBarProps> = ({
     <nav className="navbar">
       <div className="navbar-content">
         <div className="navbar-logo">
-          <span className="brand-dot"></span>
-          <span className="brand-text">BARQAT</span>
+          <img src={barqatLogo} alt="Barqat Logo" className="brand-logo-img" />
           <span className="brand-pill">B2B2C</span>
         </div>
 
@@ -132,18 +132,9 @@ export const NavBar: React.FC<NavBarProps> = ({
           gap: 8px;
         }
 
-        .brand-dot {
-          width: 10px;
-          height: 10px;
-          background: var(--primary-green);
-          border-radius: 50%;
-        }
-
-        .brand-text {
-          font-weight: 700;
-          font-size: 20px;
-          letter-spacing: 0.5px;
-          color: var(--charcoal);
+        .brand-logo-img {
+          height: 28px;
+          object-fit: contain;
         }
 
         .brand-pill {
