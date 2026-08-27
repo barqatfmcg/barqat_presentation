@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Noto+Naskh+Urdu:wght@400;600;700&display=swap');
+
+:root {
+  --primary-green: #00B14F;
+  --primary-green-glow: rgba(0, 177, 79, 0.15);
+  --maize-yellow: #FFD166;
+  --maize-yellow-glow: rgba(255, 209, 102, 0.2);
+  --charcoal: #1F2933;
+  --light-gray: #F3F4F6;
+  --border-gray: #E5E7EB;
+  --white: #FFFFFF;
+  --white-translucent: rgba(255, 255, 255, 0.85);
+  --glass-bg: rgba(255, 255, 255, 0.75);
+  --glass-border: rgba(229, 231, 235, 0.5);
+  --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+  --shadow-md: 0 8px 16px rgba(0,0,0,0.08);
+  --shadow-lg: 0 16px 32px rgba(0,0,0,0.12);
+  
+  --font-english: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-urdu: 'Noto Naskh Urdu', 'Segoe UI', Tahoma, sans-serif;
+  
+  font-family: var(--font-english);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body, html, #root {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #fafafa;
+  color: var(--charcoal);
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* Typography styles */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-english);
+  font-weight: 600;
+  color: var(--charcoal);
+}
+
+/* Animations */
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+}
+
+.pulse {
+  animation: pulse-ring 2s infinite ease-in-out;
+}
+
+/* Utility Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--light-gray);
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
