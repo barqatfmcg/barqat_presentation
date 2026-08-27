@@ -375,25 +375,25 @@ export const MapScene: React.FC<MapSceneProps> = ({ currentBeat }) => {
         <group>
           {/* North Spoke */}
           <Line points={[[0, 0.01, 0], [0, 0.01, -2.5]]} color="#E5E7EB" lineWidth={1} dashed dashSize={0.2} gapSize={0.1} />
-          <Text position={[0, 0.1, -1.3]} rotation={[0, 0, 0]} fontSize={0.18} color="#6b7280" font="https://fonts.gstatic.com/s/outfit/v11/0YbxB5EKjHY5ObpL8FDwSh0.woff">
+          <Text position={[0, 0.1, -1.3]} rotation={[0, 0, 0]} fontSize={0.18} color="#6b7280">
             1 km
           </Text>
           
           {/* South Spoke */}
           <Line points={[[0, 0.01, 0], [0, 0.01, 2.5]]} color="#E5E7EB" lineWidth={1} dashed dashSize={0.2} gapSize={0.1} />
-          <Text position={[0, 0.1, 1.3]} rotation={[0, 0, 0]} fontSize={0.18} color="#6b7280" font="https://fonts.gstatic.com/s/outfit/v11/0YbxB5EKjHY5ObpL8FDwSh0.woff">
+          <Text position={[0, 0.1, 1.3]} rotation={[0, 0, 0]} fontSize={0.18} color="#6b7280">
             1 km
           </Text>
 
           {/* East Spoke */}
           <Line points={[[0, 0.01, 0], [2.5, 0.01, 0]]} color="#E5E7EB" lineWidth={1} dashed dashSize={0.2} gapSize={0.1} />
-          <Text position={[1.3, 0.1, 0]} rotation={[0, Math.PI / 2, 0]} fontSize={0.18} color="#6b7280" font="https://fonts.gstatic.com/s/outfit/v11/0YbxB5EKjHY5ObpL8FDwSh0.woff">
+          <Text position={[1.3, 0.1, 0]} rotation={[0, Math.PI / 2, 0]} fontSize={0.18} color="#6b7280">
             1 km
           </Text>
 
           {/* West Spoke */}
           <Line points={[[0, 0.01, 0], [-2.5, 0.01, 0]]} color="#E5E7EB" lineWidth={1} dashed dashSize={0.2} gapSize={0.1} />
-          <Text position={[-1.3, 0.1, 0]} rotation={[0, Math.PI / 2, 0]} fontSize={0.18} color="#6b7280" font="https://fonts.gstatic.com/s/outfit/v11/0YbxB5EKjHY5ObpL8FDwSh0.woff">
+          <Text position={[-1.3, 0.1, 0]} rotation={[0, Math.PI / 2, 0]} fontSize={0.18} color="#6b7280">
             1 km
           </Text>
         </group>
