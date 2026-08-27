@@ -168,7 +168,7 @@ export const barqatBeats: Beat[] = [
     overlay: {
       component: "VideoTrigger",
       props: {
-        videoUrl: "/videos/whatsapp_order_demo.mp4",
+        videoUrl: "https://pub-f6f4f98825164093955ff2dfc7327a8b.r2.dev/agent_demo.mp4",
         text: "Watch: WhatsApp Order Demo"
       }
     },
@@ -193,7 +193,7 @@ export const barqatBeats: Beat[] = [
     overlay: {
       component: "VideoTrigger",
       props: {
-        videoUrl: "/videos/ai_gateway_benefits.mp4",
+        videoUrl: "https://pub-f6f4f98825164093955ff2dfc7327a8b.r2.dev/grocery_agent_benefits.mp4",
         text: "Watch: AI Gateway Benefits"
       }
     },
