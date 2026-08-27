@@ -1,15 +1,6 @@
 import os
-import requests
 import sys
-
-# =====================================================================
-# CONFIGURATION
-# =====================================================================
-# Get your API key from https://portal.speechmatics.com
-API_KEY = "YOUR_SPEECHMATICS_API_KEY"
-
-# Speechmatics Voice ID for Urdu (check portal or docs for preview voice names)
-VOICE_ID = "urdu_voice_name" 
+from gtts import gTTS
 
 # Array mapping exact files in src/data/script.ts to the Urdu transcription text
 BEATS = [
@@ -39,7 +30,7 @@ BEATS = [
     },
     {
         "file": "beat_07_video_1_trigger.mp3",
-        "text": "آئیے، اس نظام کو عملی طور پر دیکھتے ہیں۔"
+        "text": "آئیے، واٹس ایپ پر آرڈر دینے کا یہ عملی ڈیمو دیکھتے ہیں۔"
     },
     {
         "file": "beat_08_video_2_trigger.mp3",
@@ -115,17 +106,8 @@ def generate_voiceovers():
     # Target directory setup
     output_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "public", "audio"))
     os.makedirs(output_dir, exist_ok=True)
-    
-    if API_KEY == "YOUR_SPEECHMATICS_API_KEY":
-        print("[ERROR] Please replace 'YOUR_SPEECHMATICS_API_KEY' with your actual Speechmatics portal key first!")
-        sys.exit(1)
         
-    print(f"Starting Speechmatics voice generation. Target folder: {output_dir}")
-    
-    headers = {
-        "Authorization": f"Bearer {API_KEY}",
-        "Content-Type": "application/json"
-    }
+    print(f"Starting Urdu voice generation using Google Text-to-Speech (gTTS). Target folder: {output_dir}")
     
     success_count = 0
     
@@ -133,29 +115,18 @@ def generate_voiceovers():
         filename = beat["file"]
         text = beat["text"]
         
-        # Build generator URL mapping the voice ID
-        url = f"https://preview.tts.speechmatics.com/generate/{VOICE_ID}"
-        payload = {
-            "text": text
-        }
-        
         print(f"[{i+1}/{len(BEATS)}] Generating '{filename}'...")
         
         try:
-            response = requests.post(url, headers=headers, json=payload)
-            
-            if response.status_code == 200:
-                filepath = os.path.join(output_dir, filename)
-                with open(filepath, "wb") as f:
-                    f.write(response.content)
-                success_count += 1
-            else:
-                print(f"  [Failed] HTTP {response.status_code}: {response.text}")
-                
+            # Generate TTS in Urdu using gTTS
+            tts = gTTS(text=text, lang='ur')
+            filepath = os.path.join(output_dir, filename)
+            tts.save(filepath)
+            success_count += 1
         except Exception as e:
-            print(f"  [Error] Failed to request voiceover: {str(e)}")
+            print(f"  [Failed] Error generating voiceover: {str(e)}")
             
-    print(f"\nCompleted! Generated {success_count}/{len(BEATS)} voice files successfully.")
+    print(f"\nCompleted! Generated {success_count}/{len(BEATS)} Urdu voice files successfully.")
 
 if __name__ == "__main__":
     generate_voiceovers()

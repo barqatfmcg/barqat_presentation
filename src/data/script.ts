@@ -175,8 +175,8 @@ export const barqatBeats: Beat[] = [
     pausesTimeline: true,
     voiceover: {
       file: "beat_07_video_1_trigger.mp3",
-      subtitleUrdu: "آئیے، اس نظام کو عملی طور پر دیکھتے ہیں۔",
-      subtitleEnglish: "Let's see this system in practice."
+      subtitleUrdu: "آئیے، واٹس ایپ پر آرڈر دینے کا یہ عملی ڈیمو دیکھتے ہیں۔",
+      subtitleEnglish: "Let's watch a practical demo of placing an order on WhatsApp."
     }
   },
   {
