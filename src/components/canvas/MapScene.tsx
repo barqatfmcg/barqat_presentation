@@ -450,7 +450,7 @@ export const MapScene: React.FC<MapSceneProps> = ({ currentBeat }) => {
           <group position={[0, 3, 0]}>
             <Html center distanceFactor={12}>
               <div className="expansion-badge">
-                50 km Active Coverage Area
+                Expanded Active Coverage Area
               </div>
             </Html>
           </group>

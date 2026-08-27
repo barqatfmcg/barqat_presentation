@@ -491,8 +491,8 @@ export const barqatBeats: Beat[] = [
     },
     voiceover: {
       file: "beat_19_expansion_zoom.mp3",
-      subtitleUrdu: "اب دیکھیں — ایک دکان اور اس کا دائرہ مکمل طور پر خدمات فراہم کر رہا ہے۔ اب ہم آہستہ آہستہ باہر کی طرف بڑھتے ہیں، اور مشترکہ روٹس پر مزید دکانیں منتخب کرتے ہیں — ہر ایک کے ساتھ اپنا ایک کلومیٹر دائرہ۔ یہ سلسلہ پچاس کلومیٹر تک پھیلایا جائے گا۔",
-      subtitleEnglish: "Now watch — one shop and its radius is fully serving. Now we gradually expand outward, selecting more shops on common routes — each with its own one-kilometer radius. This will extend up to fifty kilometers."
+      subtitleUrdu: "اب دیکھیں — ایک دکان اور اس کا دائرہ مکمل طور پر خدمات فراہم کر رہا ہے۔ اب ہم آہستہ آہستہ باہر کی طرف بڑھتے ہیں، اور مشترکہ روٹس پر مزید دکانیں منتخب کرتے ہیں — ہر ایک کے ساتھ اپنا ایک کلومیٹر دائرہ۔",
+      subtitleEnglish: "Now watch — one shop and its radius is fully serving. Now we gradually expand outward, selecting more shops on common routes — each with its own one-kilometer radius."
     }
   },
   {
@@ -513,7 +513,7 @@ export const barqatBeats: Beat[] = [
         items: [
           { label: "12 distributor routes merged", checked: true },
           { label: "Fleetless network scaled", checked: true },
-          { label: "Entire 50km coverage live", checked: true }
+          { label: "Entire coverage live", checked: true }
         ]
       }
     },
