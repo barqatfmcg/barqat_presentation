@@ -85,6 +85,23 @@ export const TitleCard: React.FC<TitleCardProps> = ({ title, subtitle, visible =
             transform: translateY(0);
           }
         }
+
+        @media (max-width: 640px) {
+          .title-card {
+            padding: 24px 20px;
+            border-radius: 16px;
+          }
+          .title-text {
+            font-size: 28px;
+          }
+          .title-logo-img {
+            height: 36px;
+            margin-bottom: 12px;
+          }
+          .subtitle-text {
+            font-size: 14px;
+          }
+        }
       `}</style>
     </div>
   );

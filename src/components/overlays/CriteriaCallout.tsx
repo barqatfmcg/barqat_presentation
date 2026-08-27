@@ -91,6 +91,26 @@ export const CriteriaCallout: React.FC<CriteriaCalloutProps> = ({ step, title, t
             transform: translateX(0);
           }
         }
+
+        @media (max-width: 640px) {
+          .criteria-container {
+            top: auto;
+            bottom: 108px;
+            left: 12px;
+            width: calc(100% - 24px);
+            max-width: none;
+          }
+          .criteria-card {
+            padding: 14px;
+            border-radius: 12px;
+          }
+          .criteria-title {
+            font-size: 14px;
+          }
+          .criteria-text {
+            font-size: 12px;
+          }
+        }
       `}</style>
     </div>
   );

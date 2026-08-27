@@ -143,6 +143,40 @@ export const Checklist: React.FC<ChecklistProps> = ({ items }) => {
             transform: scale(1);
           }
         }
+
+        @media (max-width: 640px) {
+          .checklist-container {
+            top: 104px;
+            right: 12px;
+            left: 12px;
+            width: calc(100% - 24px);
+            max-width: none;
+          }
+          .checklist-card {
+            padding: 12px;
+            border-radius: 12px;
+            gap: 10px;
+          }
+          .checklist-header {
+            font-size: 12px;
+            padding-bottom: 4px;
+          }
+          .checklist-item {
+            gap: 8px;
+          }
+          .checkbox {
+            width: 16px;
+            height: 16px;
+            border-radius: 4px;
+          }
+          .checkmark-svg {
+            width: 10px;
+            height: 10px;
+          }
+          .checklist-label {
+            font-size: 12px;
+          }
+        }
       `}</style>
     </div>
   );

@@ -252,6 +252,58 @@ export const NavBar: React.FC<NavBarProps> = ({
         .timeline-bar-container:hover .timeline-progress-fill {
           background: #008f3f;
         }
+
+        @media (max-width: 640px) {
+          .navbar-content {
+            height: auto;
+            min-height: 56px;
+            padding: 8px 12px;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 6px;
+          }
+          .navbar-logo {
+            order: 1;
+          }
+          .navbar-controls {
+            order: 2;
+            gap: 6px;
+          }
+          .navbar-center {
+            order: 3;
+            width: 100%;
+            border-top: 1px solid #f3f4f6;
+            padding-top: 6px;
+            margin-top: 2px;
+          }
+          .brand-logo-img {
+            height: 22px;
+          }
+          .brand-pill {
+            font-size: 9px;
+            padding: 1px 6px;
+          }
+          .navbar-center-title {
+            font-size: 13px;
+          }
+          .beat-title-display {
+            font-size: 10px;
+          }
+          .time-display {
+            font-size: 11px;
+            min-width: auto;
+          }
+          .play-btn {
+            width: 32px;
+            height: 32px;
+            font-size: 12px;
+          }
+          .rehearsal-btn {
+            font-size: 12px;
+            padding: 4px;
+          }
+        }
       `}</style>
     </nav>
   );
