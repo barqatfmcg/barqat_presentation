@@ -478,8 +478,35 @@ export const barqatBeats: Beat[] = [
     }
   },
   {
-    id: "expansion_zoom",
+    id: "expansion_criteria",
     startTime: 126,
+    duration: 26,
+    camera: {
+      position: [0, 7, 7],
+      lookAt: [0, 0, 0]
+    },
+    visualAction: {
+      type: "restoreMap"
+    },
+    overlay: {
+      component: "Checklist",
+      props: {
+        title: "Criteria for Expansion",
+        items: [
+          { label: "Idea validation (proven inventoryless & fleetless)", checked: true },
+          { label: "Mature techstack e2e (unified tech & ops)", checked: true }
+        ]
+      }
+    },
+    voiceover: {
+      file: "beat_18b_expansion_criteria.mp3",
+      subtitleUrdu: "توسیع کے لیے ہمارے پاس دو اہم معیارات ہیں۔ پہلا معیار: آئیڈیا کی تصدیق۔ جب برقت کا انوینٹری لیس اور فلیٹ لیس ماڈل ایک دکان پر کامیابی سے ثابت ہو جائے گا، صرف تب ہی ہم دوسری دکانوں کی طرف بڑھیں گے، تاکہ کسی بھی مسئلے کو ایک ہی جگہ فوری حل کیا جا سکے۔ دوسرا معیار: پختہ اینڈ ٹو اینڈ ٹیکنالوجی اور آپریشنز ٹیم۔ چونکہ ہماری ٹیکنالوجی اور آپریشنز ٹیمیں متحد ہیں، اس لیے ہر آپریشنل مسئلہ بغیر کسی تاخیر اور درمیانی واسطوں کے فوری حل ہو جاتا ہے۔ جب یہ دونوں معیارات پورے ہوتے ہیں، تب ہم توسیع کا آغاز کرتے ہیں۔",
+      subtitleEnglish: "We have two key criteria for expansion. First: Idea Validation. We only scale once Barqat's inventoryless and fleetless model is proven at a single shop, ensuring any issues are iterated on quickly. Second: Mature End-to-End Tech Stack. Our unified technology and operations teams work hand-in-hand to resolve issues at runtime without overhead. Once both pass, we expand."
+    }
+  },
+  {
+    id: "expansion_zoom",
+    startTime: 152,
     duration: 13,
     camera: {
       position: [0, 16, 16],
@@ -497,7 +524,7 @@ export const barqatBeats: Beat[] = [
   },
   {
     id: "expansion_checklist",
-    startTime: 139,
+    startTime: 165,
     duration: 4,
     camera: {
       position: [0, 16, 16],
@@ -510,6 +537,7 @@ export const barqatBeats: Beat[] = [
     overlay: {
       component: "Checklist",
       props: {
+        title: "Expansion Milestones",
         items: [
           { label: "12 distributor routes merged", checked: true },
           { label: "Fleetless network scaled", checked: true },
@@ -525,7 +553,7 @@ export const barqatBeats: Beat[] = [
   },
   {
     id: "thank_you",
-    startTime: 143,
+    startTime: 169,
     duration: 5,
     camera: {
       position: [0, 8, 8],

@@ -17,7 +17,7 @@ import './App.css';
 function App() {
   const [playing, setPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
-  const [duration, setDuration] = useState(148); // total cumulative duration
+  const [duration, setDuration] = useState(174); // total cumulative duration
   const [activeBeatIndex, setActiveBeatIndex] = useState(0);
   const [videoModalOpen, setVideoModalOpen] = useState(false);
   const [videoModalUrl, setVideoModalUrl] = useState('');
@@ -122,7 +122,7 @@ function App() {
       case 'BenefitCards':
         return <BenefitCards benefits={props?.benefits || []} />;
       case 'Checklist':
-        return <Checklist items={props?.items || []} />;
+        return <Checklist title={props?.title} items={props?.items || []} />;
       case 'VideoTrigger':
         return (
           <VideoTrigger 

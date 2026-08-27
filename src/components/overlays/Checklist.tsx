@@ -6,14 +6,15 @@ type ChecklistItem = {
 };
 
 type ChecklistProps = {
+  title?: string;
   items: ChecklistItem[];
 };
 
-export const Checklist: React.FC<ChecklistProps> = ({ items }) => {
+export const Checklist: React.FC<ChecklistProps> = ({ title = "Execution Milestones", items }) => {
   return (
     <div className="checklist-container">
       <div className="checklist-card">
-        <h3 className="checklist-header">Execution Milestones</h3>
+        <h3 className="checklist-header">{title}</h3>
         <div className="checklist-items">
           {items.map((item, index) => (
             <div key={index} className="checklist-item">
